@@ -1,16 +1,16 @@
 {
     "name": "@webfactor/ionic-app-version",
-    "version": "0.1.0",
+    "version": "3.0.0",
     "repository": {
         "type": "git",
         "url": "url"
     },
     "keywords": ["angular"],
     "license": "MIT",
-    "main": "./bundles/@webfactor/ionic-app-version.umd.js",
-    "es2015": "./esm2015/@webfactor/ionic-app-version.js",
-    "module": "./esm5/@webfactor/ionic-app-version.es5.js",
-    "typings": "./@webfactor/ionic-app-version.d.ts",
+    "main": "./bundles/ionic-app-version.umd.js",
+    "es2015": "./esm2015/ionic-app-version.js",
+    "module": "./esm5/ionic-app-version.es5.js",
+    "typings": "./ionic-app-version.d.ts",
     "peerDependencies": {
         "@ionic-native/app-version": "^4.7.0",
         "ionic-angular": "^3.9.2",

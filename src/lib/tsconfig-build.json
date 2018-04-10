@@ -10,7 +10,7 @@
     "newLine": "lf",
     "module": "es2015",
     "moduleResolution": "node",
-    "outDir": "../dist/packages/@webfactor/ionic-app-version",
+    "outDir": "../dist/packages/ionic-app-version",
     "rootDir": ".",
     "sourceMap": true,
     "inlineSources": true,
@@ -20,7 +20,7 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
-      "@webfactor/ionic-app-version": ["../dist/packages/@webfactor/ionic-app-version"]
+      "ionic-app-version": ["../dist/packages/ionic-app-version"]
     },
     "typeRoots": [
       "./node_modules/@types/"
@@ -33,7 +33,7 @@
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
     "flatModuleOutFile": "index.js",
-    "flatModuleId": "@webfactor/ionic-app-version",
+    "flatModuleId": "ionic-app-version",
     "skipTemplateCodegen": true
   }
 }

@@ -1,4 +1,7 @@
 const rollupGlobals = {
+  'ionic-angular': 'ionic-angular',
+  '@ionic-native/app-version': '@ionic-native/app-version',
+
   'date-fns': 'date.fns',
   'codemirror': 'codemirror',
   'ng2-nouislider/src/nouislider': 'nouislider',
