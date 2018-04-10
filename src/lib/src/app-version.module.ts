@@ -9,13 +9,13 @@ export * from './components/app-version';
 @NgModule({
     imports: [CommonModule],
     declarations: [AppVersionComponent],
-    exports: [AppVersionComponent, AppVersion]
+    exports: [AppVersionComponent]
 })
 export class AppVersionModule {
     static forRoot(): ModuleWithProviders {
         return {
-            ngModule: AppVersionModule
-            // providers: [AppVersion]
+            ngModule: AppVersionModule,
+            providers: [AppVersion]
         };
     }
 }
