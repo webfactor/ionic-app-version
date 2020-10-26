@@ -3,8 +3,9 @@ import { AppVersion } from '@ionic-native/app-version';
 import { Platform } from 'ionic-angular';
 
 @Component({
-    selector: 'wf-app-version',
-    template: '{{ longVersionNumber || versionNumber || versionCode || "not available" }}'
+    selector: "wf-app-version",
+    template:
+        '{{ longVersionNumber || versionNumber || versionCode || "not available" }}',
 })
 export class AppVersionComponent {
     versionNumber: string;
@@ -13,17 +14,26 @@ export class AppVersionComponent {
 
     constructor(public platform: Platform, private appVersion: AppVersion) {
         this.platform.ready().then(() => {
-            this.appVersion.getVersionNumber().then(versionNumber => {
-                this.versionNumber = versionNumber;
-            }, () => null);
+            this.appVersion
+                .getVersionNumber()
+                .then((versionNumber) => {
+                    this.versionNumber = versionNumber;
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
 
-            this.appVersion.getVersionCode().then(versionCode => {
-                this.versionCode = versionCode;
-                this.setLongVersionNumber();
-            }, () => null);
+            this.appVersion
+                .getVersionCode()
+                .then((versionCode) => {
+                    this.versionCode = versionCode.toString();
+                    this.setLongVersionNumber();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         });
     }
-
 
     setLongVersionNumber() {
         var major = this.versionCode.slice(0, -6),
@@ -31,12 +41,16 @@ export class AppVersionComponent {
             patch = this.versionCode.slice(-4, -2),
             whatever = this.versionCode.slice(-2);
 
-        var versionNumber = parseInt(major) + '.'
-            + parseInt(minor) + '.'
-            + parseInt(patch) + '.'
-            + parseInt(whatever);
+        var versionNumber =
+            parseInt(major) +
+            "." +
+            parseInt(minor) +
+            "." +
+            parseInt(patch) +
+            "." +
+            parseInt(whatever);
 
-        if (versionNumber.indexOf('NaN') == -1)
+        if (versionNumber.indexOf("NaN") == -1)
             this.longVersionNumber = versionNumber;
     }
 }
