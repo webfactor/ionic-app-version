@@ -27,7 +27,11 @@ export class AppVersionComponent {
                 .getVersionCode()
                 .then((versionCode) => {
                     this.versionCode = versionCode.toString();
-                    this.setLongVersionNumber();
+                    if(!this.platform.is('ios')) {
+                        this.setLongVersionNumber();
+                    }else{
+                        this.longVersionNumber = this.versionCode;
+                    }
                 })
                 .catch((err) => {
                     console.log(err);
